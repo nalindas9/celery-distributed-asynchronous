@@ -25,6 +25,7 @@ https://user-images.githubusercontent.com/44141068/162973679-2c998f96-490a-4159-
 - Pillow==8.4.0
 - scipy==1.5.4
 - torchvision==0.11.2
+- SQLAlchemy==1.4.35
 
 ## How to Run
 1. Clone this repo. <br>
