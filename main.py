@@ -1,10 +1,13 @@
+import os
 from tasks import *
 from time import sleep
 import cv2
+import json
+from utils import *
 
 if __name__ == '__main__':
     # Use celery worker to process images
     # Webcam
-    result_camera1 = semanticSegmentation.delay([0, 2])
+    processFirstCam.delay()
     # External webcam
-    #result_camera2 = process.delay(2)
+    processSecondCam.delay()
