@@ -32,7 +32,7 @@ https://user-images.githubusercontent.com/44141068/162973679-2c998f96-490a-4159-
 3. Create and activate [Virtual Environment](https://docs.python.org/3/library/venv.html) <br>
 4. Upgrade pip using `python -m pip install --upgrade pip`.
 5. Install requirements.txt using command `pip install -r requirements.txt`
-6. Before starting main client, we need to start the celery workers. In two more terminals, enter the following commands (Before that Repeat Step 3 for each terminal) - 
+6. Before starting main client, we need to start the celery workers. In two more terminals, enter the following commands (Before that Repeat Step 2 and 3 for each terminal) - 
 
 ```
 Terminal 1 - celery -A tasks worker --loglevel=info -Q frames --concurrency 2 -n worker1@%h # Starts worker 1
