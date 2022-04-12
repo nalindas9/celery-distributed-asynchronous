@@ -22,7 +22,7 @@ https://user-images.githubusercontent.com/44141068/162973679-2c998f96-490a-4159-
 - celery==5.1.2
 - numpy==1.19.5
 - opencv_python==4.5.5.64
-- Pillow==9.1.0
+- Pillow==8.4.0
 - scipy==1.5.4
 - torchvision==0.11.2
 
