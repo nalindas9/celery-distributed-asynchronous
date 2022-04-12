@@ -16,11 +16,19 @@ app = Celery('tasks',
 
 @app.task(queue='frames')
 def processFirstCam():
-    print('Preprocessing...')
+    """
+    Process the first webcam. Display
+    the Data Augmentation and the Original
+    frame side by side
+
+    Args:
+        None
+    Returns:
+        None
+    """
+    print("Processing first webcam")
     # Video capture object for the cameras
     cap = cv2.VideoCapture(0)
-    print('Video capture objects created: {}'.format(cap))
-    
     # Display video for the cameras
     while True:
         # Read the frame
@@ -49,7 +57,17 @@ def processFirstCam():
 
 @app.task(queue='frames')
 def processSecondCam():
-    print('Semantic segmentation...')
+    """
+    Process the second webcam. Display
+    the Optical Flow and the Original
+    frame side by side
+
+    Args:
+        None
+    Returns:
+        None
+    """
+    print("Processing second webcam")
     # Video capture object for the cameras
     cap = cv2.VideoCapture(2)
 
@@ -60,7 +78,6 @@ def processSecondCam():
     mask[:, :, 1] = 255
     # Convert frame to grayscale
     prev_gray = cv2.cvtColor(first_frame, cv2.COLOR_BGR2GRAY)
-    print('Video capture objects created: {}'.format(cap))
     # Display video for the cameras
     while True:
         # Read the frames
@@ -78,7 +95,6 @@ def processSecondCam():
                                             poly_n=5, 
                                             poly_sigma=1.2, 
                                             flags=0)
-        print('Flow shape: {}'.format(flow.shape))
         # Calculate magnitude and angle of the flow
         magnitude, angle = cv2.cartToPolar(flow[:, :, 0], flow[:, :, 1])
         # Set image hue according to the optical flow direction

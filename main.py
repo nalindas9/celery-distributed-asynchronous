@@ -6,7 +6,7 @@ import json
 from utils import *
 
 if __name__ == '__main__':
-    # Use celery worker to process images
+    # Use celery workers to process images
     # Webcam
     processFirstCam.delay()
     # External webcam
