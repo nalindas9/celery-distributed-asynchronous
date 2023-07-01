@@ -4,7 +4,7 @@
 
 ## About
 Using Celery Asynchronous Task queue based on distributed message system to fetch two tasks - 1) Data Augmentation (Cam 1), 2) Computing optical flow (Cam 2). 
-Assigns the task 1 to celery worker 1 and task 2 to worker 2 and then execute it.
+Assigns task 1 to celery worker 1 and task 2 to worker 2 and then execute it.
 
 ## Output Video
 
